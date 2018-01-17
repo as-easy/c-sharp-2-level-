@@ -26,10 +26,14 @@ namespace _1_lesson
         {
             // Графическое устройство для вывода графики
             Graphics g;
+
             // предоставляет доступ к главному буферу графического контекста для текущего приложения
             _context = BufferedGraphicsManager.Current;
-            g = form.CreateGraphics();// Создаём объект - поверхность рисования и связываем его с формой
-                                      // Запоминаем размеры формы
+
+            // Создаём объект - поверхность рисования и связываем его с формой
+            g = form.CreateGraphics();
+            
+            // Запоминаем размеры формы
             Width = form.Width;
             Height = form.Height;
             // Связываем буфер в памяти с графическим объектом.
@@ -52,31 +56,35 @@ namespace _1_lesson
         public static void Load()
         {
             _objs = new BaseObject[30];
+
             for (int i = 0; i < _objs.Length / 2; i++)
+            {
                 _objs[i] = new BaseObject(new Point(600, i * 20), new Point(-i, -i), new Size(10, 10));
+            }
+
             for (int i = _objs.Length / 2; i < _objs.Length; i++)
-            _objs[i] = new Star(new Point(600, i * 20), new Point(-i, 0), new Size(5, 5));
+            {
+                _objs[i] = new Star(new Point(600, i * 20), new Point(-i, 0), new Size(5, 5));            }
         }
         public static void Draw()
         {
             // Проверяем вывод графики
-            Buffer.Graphics.Clear(Color.Black);
-            Buffer.Graphics.DrawRectangle(Pens.White, new Rectangle(100, 100, 200, 200));
-            Buffer.Graphics.FillEllipse(Brushes.Wheat, new Rectangle(100, 100, 200, 200));
+            // Buffer.Graphics.Clear(Color.Black);
+            // Buffer.Graphics.DrawRectangle(Pens.White, new Rectangle(100, 100, 200, 200));
+            // Buffer.Graphics.FillEllipse(Brushes.Wheat, new Rectangle(100, 100, 200, 200));
+            // Buffer.Render();
+
             Buffer.Render();
             Buffer.Graphics.Clear(Color.Black);
 
             foreach (BaseObject obj in _objs)
-                obj.Draw();
-
-            Buffer.Render();
+                obj.Draw();            
         }
 
         public static void Update()
         {
             foreach (BaseObject obj in _objs)
                 obj.Update();
-        }
-
+        }
     }
 }
