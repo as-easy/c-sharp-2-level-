@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace _1_lesson
 {
@@ -16,11 +17,13 @@ namespace _1_lesson
         {
             Form form = new Form();
             form.Width = 300;
-            form.Height = 300;
+            form.Height = 300;            
+
             Game.Init(form);
             form.Show();
-            Game.Draw();
+            //Game.Draw();
             Application.Run(form);
+           
         }
     }
 }
