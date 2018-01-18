@@ -21,17 +21,20 @@ namespace _1_lesson
         }
         public virtual void Draw()
         {
-            Game.Buffer.Graphics.DrawRectangle(Pens.White, Pos.X, Pos.Y, Size.Width, Size.Height);
-             //   DrawEllipse(Pens.White, Pos.X, Pos.Y, Size.Width, Size.Height);
+            //Game.Buffer.Graphics.DrawRectangle(Pens.White, Pos.X, Pos.Y, Size.Width, Size.Height);
+            //   DrawEllipse(Pens.White, Pos.X, Pos.Y, Size.Width, Size.Height);
+
+            Game.Buffer.Graphics.DrawImage(Image.FromFile("meteorGrey_med1.png"), Pos.X, Pos.Y, Size.Width, Size.Height);
         }
         public virtual void Update()
         {
-            Pos.X = Pos.X + Dir.X;
-            Pos.Y = Pos.Y + Dir.Y;
+            
             if (Pos.X < 0) Dir.X = -Dir.X;
             if (Pos.X > Game.Width) Dir.X = -Dir.X;
             if (Pos.Y < 0) Dir.Y = -Dir.Y;
             if (Pos.Y > Game.Height) Dir.Y = -Dir.Y;
+            Pos.X = Pos.X + Dir.X;
+            Pos.Y = Pos.Y + Dir.Y;
         }
     }
 }

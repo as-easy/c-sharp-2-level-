@@ -51,29 +51,26 @@ namespace _1_lesson
         {
             Draw();
             Update();
-        }
+        }
+
 
         public static void Load()
         {
-            _objs = new BaseObject[30];
+            _objs = new BaseObject[4];
 
             for (int i = 0; i < _objs.Length / 2; i++)
             {
-                _objs[i] = new BaseObject(new Point(600, i * 20), new Point(-i, -i), new Size(10, 10));
+                _objs[i] = new BaseObject(new Point(150 + i * 30, i * 20 ), new Point(7, 7), new Size(10, 10));
             }
 
             for (int i = _objs.Length / 2; i < _objs.Length; i++)
             {
-                _objs[i] = new Star(new Point(600, i * 20), new Point(-i, 0), new Size(5, 5));            }
-        }
+                _objs[i] = new Star(new Point(200, i * 20 + 20), new Point(i+1, i+1), new Size(5, 5));
+            }
+        }
+
         public static void Draw()
         {
-            // Проверяем вывод графики
-            // Buffer.Graphics.Clear(Color.Black);
-            // Buffer.Graphics.DrawRectangle(Pens.White, new Rectangle(100, 100, 200, 200));
-            // Buffer.Graphics.FillEllipse(Brushes.Wheat, new Rectangle(100, 100, 200, 200));
-            // Buffer.Render();
-
             Buffer.Render();
             Buffer.Graphics.Clear(Color.Black);
 

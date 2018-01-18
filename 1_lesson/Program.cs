@@ -15,8 +15,8 @@ namespace _1_lesson
         static void Main()
         {
             Form form = new Form();
-            form.Width = 800;
-            form.Height = 600;
+            form.Width = 300;
+            form.Height = 300;
             Game.Init(form);
             form.Show();
             Game.Draw();

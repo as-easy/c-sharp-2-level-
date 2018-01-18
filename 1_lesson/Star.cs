@@ -16,14 +16,17 @@ namespace _1_lesson
         {
             Game.Buffer.Graphics.DrawLine(Pens.White, Pos.X, Pos.Y, Pos.X + Size.Width, Pos.Y + Size.Height);
             Game.Buffer.Graphics.DrawLine(Pens.White, Pos.X + Size.Width, Pos.Y, Pos.X, Pos.Y + Size.Height);
-        }
+        }
+
         public override void Update()
         {
             Pos.X = Pos.X - Dir.X;
             if (Pos.X < 0) Pos.X = Game.Width + Size.Width;
-            if (Pos.X > Game.Width) Dir.X = -Dir.X;
+            if (Pos.X > Game.Width-50) Dir.X = -Dir.X;
             if (Pos.Y < 0) Dir.Y = -Dir.Y;
-            if (Pos.Y > Game.Height) Dir.Y = -Dir.Y;
-        }
-    }
+            if (Pos.Y > Game.Height-50) Dir.Y = -Dir.Y;
+        }
+
+    }
+
 }
