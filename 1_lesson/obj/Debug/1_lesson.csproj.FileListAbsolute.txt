@@ -7,3 +7,13 @@ C:\Users\aseasy\Desktop\c-sharp-2\1_lesson\obj\Debug\1_lesson.csproj.GenerateRes
 C:\Users\aseasy\Desktop\c-sharp-2\1_lesson\obj\Debug\1_lesson.exe
 C:\Users\aseasy\Desktop\c-sharp-2\1_lesson\obj\Debug\1_lesson.pdb
 C:\Users\aseasy\Desktop\c-sharp-2\1_lesson\obj\Debug\_1_lesson.Form1.resources
+C:\Users\Vladimir\Desktop\c-sharp-2\1_lesson\bin\Debug\1_lesson.exe.config
+C:\Users\Vladimir\Desktop\c-sharp-2\1_lesson\bin\Debug\1_lesson.exe
+C:\Users\Vladimir\Desktop\c-sharp-2\1_lesson\bin\Debug\1_lesson.pdb
+C:\Users\Vladimir\Desktop\c-sharp-2\1_lesson\obj\Debug\1_lesson.csprojResolveAssemblyReference.cache
+C:\Users\Vladimir\Desktop\c-sharp-2\1_lesson\obj\Debug\_1_lesson.Form1.resources
+C:\Users\Vladimir\Desktop\c-sharp-2\1_lesson\obj\Debug\_1_lesson.Properties.Resources.resources
+C:\Users\Vladimir\Desktop\c-sharp-2\1_lesson\obj\Debug\1_lesson.csproj.GenerateResource.Cache
+C:\Users\Vladimir\Desktop\c-sharp-2\1_lesson\obj\Debug\1_lesson.csproj.CoreCompileInputs.cache
+C:\Users\Vladimir\Desktop\c-sharp-2\1_lesson\obj\Debug\1_lesson.exe
+C:\Users\Vladimir\Desktop\c-sharp-2\1_lesson\obj\Debug\1_lesson.pdb
