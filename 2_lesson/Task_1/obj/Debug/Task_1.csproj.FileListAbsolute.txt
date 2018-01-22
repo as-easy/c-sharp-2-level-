@@ -1,0 +1,6 @@
+C:\Users\aseasy\Desktop\c-sharp-2\2_lesson\Task_1\bin\Debug\Task_1.exe.config
+C:\Users\aseasy\Desktop\c-sharp-2\2_lesson\Task_1\bin\Debug\Task_1.exe
+C:\Users\aseasy\Desktop\c-sharp-2\2_lesson\Task_1\bin\Debug\Task_1.pdb
+C:\Users\aseasy\Desktop\c-sharp-2\2_lesson\Task_1\obj\Debug\Task_1.csprojResolveAssemblyReference.cache
+C:\Users\aseasy\Desktop\c-sharp-2\2_lesson\Task_1\obj\Debug\Task_1.exe
+C:\Users\aseasy\Desktop\c-sharp-2\2_lesson\Task_1\obj\Debug\Task_1.pdb
