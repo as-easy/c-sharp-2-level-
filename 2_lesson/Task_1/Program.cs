@@ -8,8 +8,18 @@ using System.Collections;
 
 namespace Task_1
 {
+    /// <summary>
+    ///     Разработчик: Варанкин Владимир
+    /// </summary>
+    /// 
     class Program
     {
+        /// <summary>
+        ///     Реализация 1 и 4, задания
+        ///     <para>pathFixEmployeeDB - Константа с несуществующим файлом</para>
+        ///     <para>pathTimeEmployeeDB - Константа с БД сотрудников с почасовой оплатой</para>
+        /// </summary>  
+        /// 
         static void Main(string[] args)
         {
             const double fixpayment = 90000;
@@ -26,31 +36,32 @@ namespace Task_1
             fixEmloyee.ReadEmployeeDB(pathFixEmployeeDB);
             fixEmloyee.ToDisplay();
 
-            timeEmployee.ReadEmployeeDB(pathTimeEmployeeDB);
-           // timeEmployee.S
+            timeEmployee.ReadEmployeeDB(pathTimeEmployeeDB);           
             timeEmployee.ToDisplay();
 
-            
-
-            ArrayList arrayEmployee = new ArrayList();
-
-            //arrayEmployee.Add(timeEmployee.strarr);
-
-            for (int i = 0; i < timeEmployee.strarr.Count; i++)
-            {                
-                ArrayEmployee ae = new ArrayEmployee();
-                ae.Tostrtemp = timeEmployee.strarr[i].ToString();
-                arrayEmployee.Add(ae);
-            }
-
-            arrayEmployee.Sort();
-
-           // timeEmployee.strarr.Sort();
-
-            foreach (ArrayEmployee t in arrayEmployee)
+            //1.в) *Реализовать интерфейсы для возможности сортировки массива используя Array.Sort(). 
+            //Взял пример из справки https://msdn.microsoft.com/ru-ru/library/system.icomparable(v=vs.110).aspx 
+            //Правда, всего этого можно было не делать, а применить  timeEmployee.strarr.Sort() без реализации интерфейса IComparable
+            #region 1в
             {
-                Console.WriteLine(t.Tostrtemp);
+                ArrayList arrayEmployee = new ArrayList();
+
+                for (int i = 0; i < timeEmployee.strarr.Count; i++)
+                {
+                    ArrayEmployee ae = new ArrayEmployee();
+                    ae.Tostrtemp = timeEmployee.strarr[i].ToString();
+                    arrayEmployee.Add(ae);
+                }
+
+                Console.WriteLine("1.в) Реализация сортировки");
+                arrayEmployee.Sort();
+
+                foreach (ArrayEmployee t in arrayEmployee)
+                {
+                    Console.WriteLine("\t" + t.Tostrtemp);
+                }
             }
+            #endregion
 
             Console.ReadKey();
         }

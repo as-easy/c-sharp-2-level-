@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Task_1</name>
+    </assembly>
+    <members>
+        <member name="T:Task_1.AbstractArrayEmployee">
+            <summary>
+                1.б) Создать на базе абстрактного класса массив сотрудников и заполнить его. 
+            </summary>
+        </member>
+        <member name="T:Task_1.EmployeeFixPayment">
+            <summary>
+                1.а) Описать в базовом классе абстрактный метод для расчёта среднемесячной заработной платы.
+            </summary>
+        </member>
+        <member name="M:Task_1.EmployeeFixPayment.Pay(System.Double)">
+            <summary>
+                1.а) Расчет среднемесячной заработной платы с фиксированной оплатой
+            </summary>
+            <param name="fixpayment">Фиксированная оплата</param>
+        </member>
+        <member name="M:Task_1.EmployeeFixPayment.ReadEmployeeDB(System.String)">
+            <summary>
+                1.б) Заполнение массива сотрудников с фиксированной оплатой
+            </summary>
+            <param name="pathEmployeeDB">Путь к БД сотрудников</param>
+        </member>
+        <member name="T:Task_1.ArrayEmployee">
+            <summary>
+                Реализация заданий 1.б, 1.в, 1.г, 4
+                <para>Массив сотрудников наследуется от абстрактного базового класса AbstractArrayEmployee</para>
+            </summary>
+        </member>
+        <member name="M:Task_1.ArrayEmployee.ReadEmployeeDB(System.String)">
+            <summary>
+                1.б) Создать на базе абстрактного класса массив сотрудников и заполнить его
+                4. Вызов исключения при отсутствующем файле
+            </summary>
+            <param name="pathEmployeeDB">Путь к БД сотрудников</param>
+        </member>
+        <member name="M:Task_1.ArrayEmployee.ToDisplay">
+            <summary>
+                1.г) **Создать класс содержащий массив сотрудников. Вывод на экран.
+                <para>Реализовать возможность вывода данных с использованием foreach</para> 
+            </summary>
+            
+        </member>
+        <member name="M:Task_1.EmployeeTimePayment.Pay(System.Double)">
+            <summary>
+                1.а) Расчет среднемесячной заработной платы с почасовой оплатой
+            </summary>
+            <param name="timepayment">Почасовая оплата</param>
+        </member>
+        <member name="M:Task_1.EmployeeTimePayment.ReadEmployeeDB(System.String)">
+            <summary>
+                1.б) Заполнение массива сотрудников с почасовой оплатой
+            </summary>
+            <param name="pathEmployeeDB">Путь к БД сотрудников</param>
+        </member>
+        <member name="T:Task_1.IEmployeePayment">
+            <summary>
+                1.а) Описать в базовом классе абстрактный метод для расчёта среднемесячной заработной платы.
+            </summary>
+        </member>
+        <member name="M:Task_1.IEmployeePayment.Pay(System.Double)">
+            <summary>
+                Метод для расчета заработной платы
+            </summary>
+            <param name="payment">Заработная плата</param>
+        </member>
+        <member name="T:Task_1.Program">
+            <summary>
+                Разработчик: Варанкин Владимир
+            </summary>
+            
+        </member>
+        <member name="M:Task_1.Program.Main(System.String[])">
+            <summary>
+                Реализация 1 и 4, задания
+                <para>pathFixEmployeeDB - Константа с несуществующим файлом</para>
+                <para>pathTimeEmployeeDB - Константа с БД сотрудников с почасовой оплатой</para>
+            </summary>  
+            
+        </member>
+    </members>
+</doc>

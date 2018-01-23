@@ -7,10 +7,13 @@ using System.Collections;
 
 namespace Task_1
 {
+    /// <summary>
+    ///     1.б) Создать на базе абстрактного класса массив сотрудников и заполнить его. 
+    /// </summary>
     abstract internal class AbstractArrayEmployee
     {
         internal ArrayList strarr = new ArrayList();
-            //string[] strarr;
+        
         abstract public void ReadEmployeeDB(string pathEmployeeDB);
     }
 }
