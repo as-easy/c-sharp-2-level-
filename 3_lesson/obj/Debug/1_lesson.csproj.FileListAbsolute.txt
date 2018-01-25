@@ -27,3 +27,12 @@ C:\Users\Vladimir\Desktop\c-sharp-2\3_lesson\obj\Debug\1_lesson.pdb
 C:\Users\Vladimir\Desktop\c-sharp-2\3_lesson\bin\Debug\1_lesson.exe.config
 C:\Users\Vladimir\Desktop\c-sharp-2\3_lesson\bin\Debug\1_lesson.exe
 C:\Users\Vladimir\Desktop\c-sharp-2\3_lesson\bin\Debug\1_lesson.pdb
+C:\Users\aseasy\Desktop\c-sharp-2\3_lesson\bin\Debug\1_lesson.exe.config
+C:\Users\aseasy\Desktop\c-sharp-2\3_lesson\obj\Debug\1_lesson.exe
+C:\Users\aseasy\Desktop\c-sharp-2\3_lesson\obj\Debug\1_lesson.pdb
+C:\Users\aseasy\Desktop\c-sharp-2\3_lesson\bin\Debug\1_lesson.exe
+C:\Users\aseasy\Desktop\c-sharp-2\3_lesson\bin\Debug\1_lesson.pdb
+C:\Users\aseasy\Desktop\c-sharp-2\3_lesson\obj\Debug\1_lesson.csprojResolveAssemblyReference.cache
+C:\Users\aseasy\Desktop\c-sharp-2\3_lesson\obj\Debug\_1_lesson.Form1.resources
+C:\Users\aseasy\Desktop\c-sharp-2\3_lesson\obj\Debug\_1_lesson.Properties.Resources.resources
+C:\Users\aseasy\Desktop\c-sharp-2\3_lesson\obj\Debug\1_lesson.csproj.GenerateResource.Cache

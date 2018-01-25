@@ -15,25 +15,18 @@ namespace _1_lesson
         private static Bullet _bullet;
         private static Asteroid[] _asteroids;
         private static Fuel _fuel;
-        private static Ship _ship = new Ship(new Point(0, 300), new Point(5, 5), new Size(40, 40));
-
+        private static Ship _ship;
+        private static int countTimeFuel = 0; //подсчет времени для вызова топлива
+        private static int countDieAsteroid = 0; //подбитые астероиды
         private static BufferedGraphicsContext _context;
         public static BufferedGraphics Buffer;
         public static BaseObject[] _objs;
-
         private static Timer _timer = new Timer();
-        public static Random Rnd = new Random();
+        public static Random Rnd = new Random();
 
         public static int Width { get; set; } // ширина и высота игрового поля
-        public static int Height { get; set; }
-
-        //public static BaseObject[] _obBaseO;
-        // public static BaseObject[] _obStar;
-        //static Game()
-        //{
-        //}
-
-
+        public static int Height { get; set; }       
+        
 
         public static void Init(Form form)
         {
@@ -96,17 +89,17 @@ namespace _1_lesson
 
         private static void Timer_Tick(object sender, EventArgs e)
         {
+            countTimeFuel++;
             Draw();
-            Update();
+            Update(); 
         }
 
 
         public static void Load()
         {
-            _objs = new BaseObject[30];
-            _bullet = null;   
+            _ship = new Ship(new Point(0, 300), new Point(5, 5), new Size(40, 40));
+            _objs = new BaseObject[30];            
             _asteroids = new Asteroid[3];
-            //_fuel = null;
             var rnd = new Random();
 
             for (var i = 0; i < _objs.Length; i++)
@@ -114,19 +107,16 @@ namespace _1_lesson
                 int r = rnd.Next(5, 15);
                 _objs[i] = new Star(new Point(1000, rnd.Next(0, Game.Height)), 
                                     new Point(-r, r/5), 
-                                    new Size(4, 4), 
-                                    Width);
+                                    new Size(4, 4));
             }
 
             for (var i = 0; i < _asteroids.Length; i++)
             {
                 int r = rnd.Next(25, 50);
-                _asteroids[i] = new Asteroid(new Point(rnd.Next(0, Game.Width-50), 1000), 
+                _asteroids[i] = new Asteroid(new Point(1000, rnd.Next(0, Game.Height)), 
                                              new Point(-r, r /3),
                                              new Size(r, r));
-            }
-
-            
+            }            
         }
 
         public static void Draw()
@@ -134,22 +124,33 @@ namespace _1_lesson
             Buffer.Graphics.Clear(Color.Black);
             foreach (BaseObject obj in _objs)
                 obj.Draw();
+
             foreach (Asteroid a in _asteroids)
             {
                 a?.Draw();
             }
+            _fuel?.Draw();
             _bullet?.Draw();
             _ship?.Draw();
+
             if (_ship != null)
-                Buffer.Graphics.DrawString("Energy:" + _ship.Energy, SystemFonts.DefaultFont, Brushes.White, 0,
-                0);
+                Buffer.Graphics.DrawString("Energy:" + _ship.Energy, SystemFonts.DefaultFont, Brushes.White, 0,0);
+
+            #region 3.Подсчет сбитых астероидов
+            Buffer.Graphics.DrawString($"Count ast: {countDieAsteroid}", SystemFonts.DefaultFont, Brushes.White, Width - 70, 0);
+            #endregion
+
             Buffer.Render();  
         }
 
         public static void Update()
         {
             foreach (BaseObject obj in _objs) obj.Update();
+
             _bullet?.Update();
+            _fuel?.Update();
+
+            #region Астероид (столкновение с пулей и кораблем)
             for (var i = 0; i < _asteroids.Length; i++)
             {
                 if (_asteroids[i] == null) continue;
@@ -158,18 +159,39 @@ namespace _1_lesson
                 if (_bullet != null && _bullet.Collision(_asteroids[i]))
                 {
                     System.Media.SystemSounds.Hand.Play();
+                    countDieAsteroid++;                   
                     _asteroids[i] = null;
                     _bullet = null;
                     continue;
-                }
+                }                
 
                 if (!_ship.Collision(_asteroids[i])) continue;
                 var rnd = new Random();
                 _ship?.EnergyLow(rnd.Next(1, 10));
                 System.Media.SystemSounds.Asterisk.Play();
                 if (_ship.Energy <= 0) _ship?.Die();
+            }
+            #endregion
 
-            }            
+            #region 2.Создание и столкновение аптечки
+            if (_fuel == null && countTimeFuel % 80 == 0)
+            {
+                var rnd = new Random();
+                // int r = rnd.Next(0, Width);
+                _fuel = new Fuel(new Point(rnd.Next(30, Width)-30, 0),
+                                 new Point(10, 10),
+                                 new Size(30, 30));
+            }
+
+            if (_fuel != null && _ship.Collision(_fuel))
+            {
+                _ship?.EnergyUp(25);
+                System.Media.SystemSounds.Hand.Play();
+                _fuel = null;                
+            }
+
+            if (_fuel?.PositionY > Height) _fuel = null;
+            #endregion
         }
 
         public static void Finish()

@@ -22,8 +22,19 @@ namespace _1_lesson
         }
 
         public abstract void Draw();
-        public abstract void Update();
+        public virtual void Update()
+        {
+            if (Pos.Y > Game.Height)
+            {
+                Random rnd = new Random();
+                Pos.Y = 0 - Size.Height;
+                Pos.X = rnd.Next(20, Game.Width - Size.Width);
+            }
+            Pos.Y += Dir.Y;
+        }
+            
         public bool Collision(ICollision o) => o.Rect.IntersectsWith(this.Rect);
-        public Rectangle Rect => new Rectangle(Pos, Size);
+        public Rectangle Rect => new Rectangle(Pos, Size);
+
     }
 }

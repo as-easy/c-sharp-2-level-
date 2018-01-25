@@ -12,7 +12,8 @@ namespace _1_lesson
         private int _energy = 100;
         public int Energy => _energy;
         public delegate void Message();
-        public static event Message MessageDie;
+        public static event Message MessageDie;
+
 
         public Ship(Point pos, Point dir, Size size) : base(pos, dir, size)
         {
@@ -25,8 +26,11 @@ namespace _1_lesson
 
         public void EnergyUp(int n)
         {
-            if(_energy<=150)
-                _energy += n;
+            if (_energy <= 150)
+                if (_energy + n > 150)
+                    _energy = 150;
+                else
+                    _energy += n;
         }
 
         public override void Draw()
@@ -63,6 +67,7 @@ namespace _1_lesson
         public void Die()
         {
             MessageDie?.Invoke();
-        }
+        }
+
     }
 }
