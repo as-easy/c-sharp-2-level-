@@ -21,14 +21,23 @@ namespace Task_3
             var d = dict.OrderBy(delegate (KeyValuePair<string, int> pair) { return pair.Value; }); //Анонимный метод
             Program.ToDisplay(d);
 
-            var d1 = dict.OrderBy(pair => pair.Value); //С лямбда-выражением
+            var d1 = dict.OrderBy(pair => pair.Value); //3.а С лямбда-выражением
             Program.ToDisplay(d1);
 
-            Func<KeyValuePair<string, int>, int> fun = delegate (KeyValuePair<string, int> pair1) { return pair1.Value; }; //С делегатом
+            Func<KeyValuePair<string, int>, int> fun = delegate (KeyValuePair<string, int> pair1) { return pair1.Value; }; //для собственного понимания
             var d2 = dict.OrderBy(fun);
             Program.ToDisplay(d2);
+           
+            fun += Program.FunKeyPair;  //3.Б
+            var d3 = dict.OrderBy(fun);
+            Program.ToDisplay(d3);
 
             Console.ReadKey();
+        }
+
+        static int FunKeyPair(KeyValuePair<string, int> pair)
+        {
+            return pair.Value;
         }
 
         static void ToDisplay(IOrderedEnumerable<KeyValuePair<string, int>> dictSort)
@@ -37,6 +46,7 @@ namespace Task_3
             {
                 Console.WriteLine("{0} - {1}", pair.Key, pair.Value);
             }
+            Console.WriteLine();
         }
     }
 }
