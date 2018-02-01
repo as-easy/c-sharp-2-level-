@@ -5,13 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_5_lesson"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="650">
+    <Window.Resources>
+        <!--<Style TargetType="Label">
+            <Setter Property="FontSize" Value="20"/>            
+        </Style>-->
+    </Window.Resources>
     <Grid>
-        <ListBox Margin="10" Name="lbEmployee" SelectionMode="Single"
-                 SelectionChanged="lbEmployee_SelectionChanged" 
-                 VerticalAlignment="Top"
-                 Height="250"></ListBox>
-        <Button Margin="10" Height="25" Width="70" 
+        <WrapPanel Margin="0,0,0,80" >
+            <StackPanel>
+                <Label Margin="10,0,0,0">Employee</Label>
+                <ListBox Margin="10" Name="lbEmployee" SelectionMode="Single"
+                         
+                     SelectionChanged="lbEmployee_SelectionChanged"
+                     Width="300"
+                     VerticalAlignment="Top"                 
+                     Height="200">                    
+                </ListBox>     
+            </StackPanel>
+            <StackPanel>
+                <Label Margin="10,0,0,0">Departmen</Label>
+                <ListBox Margin="10" Name="lbDepartmen" SelectionMode="Single"
+                         SelectionChanged="lbDepartmen_SelectionChanged"
+                         Width="250"
+                         VerticalAlignment="Top"                 
+                         Height="200">                    
+                </ListBox>                        
+            </StackPanel>            
+        </WrapPanel>                   
+        <Button Margin="30" Height="25" Width="70" 
                 VerticalAlignment="Bottom" Click="Button_Click"
                 >Добавить</Button>
     </Grid>
